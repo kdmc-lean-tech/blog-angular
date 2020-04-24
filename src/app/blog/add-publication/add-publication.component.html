@@ -1,0 +1,33 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFlex="100">
+    <mat-card class="border" fxFlex="75">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="example-container" fxLayout="column" 
+                 fxFlex="100" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+                  <mat-form-field appearance="fill" fxFlex="45">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title" class="capitalize">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" fxFlex="45">
+                      <mat-label>Subtitle</mat-label>
+                      <input matInput formControlName="subtitle" class="capitalize">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <angular-editor formControlName="content" [config]="editorConfig"></angular-editor>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <input type="file" (change)="onFileChange($event)" />
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" *ngIf="file && !urlImg">
+                  <img src="{{ file }}" alt="image" class="responsive">
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!file && urlImg">
+                  <img src="{{ urlImg }}" alt="image" class="responsive">
+                </div>
+                <button mat-raised-button type="submit" [disabled]="form.invalid">Save</button>
+              </div>
+        </form>
+    </mat-card>
+    <ngx-loading [show]="loading" [config]="loadingConfiguration"></ngx-loading>
+</div>

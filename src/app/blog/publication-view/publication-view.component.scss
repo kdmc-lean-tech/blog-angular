@@ -1,0 +1,25 @@
+.example-card {
+    margin-bottom: 16px;
+}
+
+:host::ng-deep .mat-card:not([class*="mat-elevation-z"]).table-template-fields,
+.mat-card:not([class*="mat-elevation-z"]).border {
+  box-shadow: none;
+}
+
+:host::ng-deep .mat-card.border {
+  border-radius: 8px;
+  border: solid 1px #e2e1e1;
+  padding: 11px 18px;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 300px;
+    object-fit:cover;
+    border-radius: 5px;
+}
+
+.underline {
+    text-decoration: underline black;    
+}

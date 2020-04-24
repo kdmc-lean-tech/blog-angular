@@ -1,0 +1,50 @@
+.example-card {
+    margin-bottom: 16px;
+}
+
+.avatar-image {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+:host::ng-deep .mat-card:not([class*="mat-elevation-z"]).table-template-fields,
+.mat-card:not([class*="mat-elevation-z"]).border {
+  box-shadow: none;
+}
+
+:host::ng-deep mat-card.border {
+  border-radius: 8px;
+  border: solid 1px #e2e1e1;
+  padding: 11px 18px;
+}
+
+@media screen and (max-width: 2500px) {
+  .masonry-layout {
+    column-count: 3;
+    column-gap: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .masonry-layout {
+    column-count: 2;
+    column-gap: 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .masonry-layout {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.masonry-layout__panel {
+  break-inside: avoid;
+  padding: 5px;
+}
+
+.masonry-layout__panel-content {
+  padding: 10px;
+  border-radius: 10px;
+}

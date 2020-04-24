@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFlex="100">
+    <mat-card class="border" fxFlex="75">
+        <div>
+            <img class="responsive-image" src="{{ publication?.img }}" alt="{{ publication?.title }}">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <h1 class="underline">{{ publication?.title }}</h1>
+        </div>
+        <div>
+            <h3>
+                <i>{{ publication?.create_at | date }}</i>
+            </h3>
+        </div>
+        <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+            <span [innerHTML]="publication?.content" style="padding: 10px;"></span>
+        </mat-card-content>
+      </mat-card>
+</div>
